@@ -35,13 +35,13 @@ var highScore = [
       }
      }
      if(check === "true"){
-     console.log("Congrats " +userName+ " You Have Beat the High Score Please Send me SS I'll Update your Name")
+     console.log(chalk.magentaBright("Congrats " +userName+ " You Have Beat the High Score Please Send me SS I'll Update your Name"))
      }
   }
 var userplay = readline.question("Press C to View The Rules Of Quiz ");
 if(userplay.toUpperCase() === "c".toUpperCase())
 {
-   console.log(chalk.yellowBright.bgBlack(" Rules For Playing This quiz "));
+   console.log(chalk.green.bgBlack(" Rules For Playing This quiz "));
    console.log("Each Question is of 1 mark If You Give Correct Answer you get one mark added to your score card");
    console.log(chalk.red.bgBlack(" Answer 5 Correct to go to level 2 and Answer 5 Correct to go to level 3 "));
    console.log("Beat The High-Score If You can !!!! ");
@@ -132,7 +132,7 @@ if(userplay.toUpperCase() === "c".toUpperCase())
           }
           console.log("----------------------------------------");
         } 
-        console.log("Your Final Score " +score+ " out of 15 ");
+        console.log(chalk.redBright("Your Final Score " +score+ " out of 15 "));
         console.log("----------------------------------------");
         high();
               
@@ -153,10 +153,10 @@ function play(question,answer)
   if(userAnswer.toUpperCase() === answer.toUpperCase())
   {
     score++;
-    console.log("Right Answer");
+    console.log(chalk.green("Right Answer"));
   }
   else
   {
-    console.log("Wrong Answer");
+    console.log(chalk.red("Wrong Answer"));
   }
 }
