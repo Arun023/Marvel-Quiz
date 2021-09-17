@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const readline = require("readline-sync");
 var score = 0;
 var userName = readline.question(chalk.blue("What's Your Name "));
-console.log(chalk.green("Welcome " + userName + " To Arun's Quiz on Marvel"));
+console.log(chalk.green("\nWelcome " + userName + " To Arun's Quiz on Marvel"));
 
 // High Scores 
 var highScore = [
@@ -19,7 +19,7 @@ var highScore = [
 
   function high()
   { 
-    console.log("Check Out High Scores");
+    console.log("\nCheck Out High Scores\n");
     for(i=0; i<highScore.length; i++ )
     {
       console.log(highScore[i].name + " : " + highScore[i].score);
@@ -35,17 +35,18 @@ var highScore = [
       }
      }
      if(check === "true"){
-     console.log(chalk.magentaBright("Congrats " +userName+ " You Have Beat the High Score Please Send me SS I'll Update your Name"))
+     console.log(chalk.magentaBright("\nCongrats " +userName+ " You Have Beat the High Score Please Send me SS I'll Update your Name"))
      }
   }
-var userplay = readline.question("Press C to View The Rules Of Quiz ");
+var userplay = readline.question("\nPress C to View The Rules Of Quiz: ");
 if(userplay.toUpperCase() === "c".toUpperCase())
 {
-   console.log(chalk.green.bgBlack(" Rules For Playing This quiz "));
+   console.log(chalk.green.bgBlack(" \nRules For Playing This quiz: "));
    console.log("Each Question is of 1 mark If You Give Correct Answer you get one mark added to your score card");
    console.log(chalk.red.bgBlack(" Answer 5 Correct to go to level 2 and Answer 5 Correct to go to level 3 "));
-   console.log("Beat The High-Score If You can !!!! ");
+   console.log("\nBeat The High-Score If You can !!!! ");
    userplay = readline.question("Press P to Start the Quiz ");
+   console.log("\n");
    if(userplay.toUpperCase() === "p".toUpperCase())
    {
        // Question Bank 
@@ -153,10 +154,10 @@ function play(question,answer)
   if(userAnswer.toUpperCase() === answer.toUpperCase())
   {
     score++;
-    console.log(chalk.green("Right Answer"));
+    console.log(chalk.green("\nRight Answer"));
   }
   else
   {
-    console.log(chalk.red("Wrong Answer"));
+    console.log(chalk.red("\nWrong Answer"));
   }
 }
