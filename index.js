@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const readline = require("readline-sync");
 var score = 0;
 var userName = readline.question(chalk.blue("What's Your Name "));
-console.log(chalk.green("\nWelcome " + userName + " To Arun's Quiz on Marvel"));
+console.log(chalk.yellow("\nWelcome " + userName + " To Arun's Quiz on Marvel"));
 
 // High Scores 
 var highScore = [
@@ -41,12 +41,12 @@ var highScore = [
 var userplay = readline.question("\nPress C to View The Rules Of Quiz: ");
 if(userplay.toUpperCase() === "c".toUpperCase())
 {
-   console.log(chalk.green.bgBlack(" \nRules For Playing This quiz: "));
-   console.log("Each Question is of 1 mark If You Give Correct Answer you get one mark added to your score card");
-   console.log(chalk.red.bgBlack(" Answer 5 Correct to go to level 2 and Answer 5 Correct to go to level 3 "));
+   console.log(chalk.green("\nRules For Playing This quiz "));
+   console.log(chalk.green("Each Question is of 1 mark If You Give Correct Answer you get one mark added to your score card"));
+   console.log(chalk.green("Answer 5 Correct to go to level 2 and Answer 5 Correct to go to level 3 "));
    console.log("\nBeat The High-Score If You can !!!! ");
-   userplay = readline.question("Press P to Start the Quiz ");
-   console.log("\n");
+   userplay = readline.question("\nPress P to Start the Quiz: ");
+   console.log("\n")
    if(userplay.toUpperCase() === "p".toUpperCase())
    {
        // Question Bank 
@@ -150,14 +150,15 @@ else{
 
 function play(question,answer)
 {
-  var userAnswer = readline.question(question);
+  var userAnswer = readline.question(chalk.yellowBright(question));
   if(userAnswer.toUpperCase() === answer.toUpperCase())
   {
     score++;
-    console.log(chalk.green("\nRight Answer"));
+    console.log(chalk.green("\nRight Answer\n"));
   }
   else
   {
     console.log(chalk.red("\nWrong Answer"));
+    console.log(chalk.green("Correct Answer is: "+ answer+"\n"))
   }
 }
