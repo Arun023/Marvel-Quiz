@@ -8,11 +8,11 @@ console.log(chalk.yellow("\nWelcome " + userName + " To Arun's Quiz on Marvel"))
 var highScore = [
   {
   name: "Arun", 
-  score: "13" ,
+  score: "12" ,
 },
 {
   name: "Ayush",
-  score: "12" ,
+  score: "13" ,
 }];
 
 //display high score function
